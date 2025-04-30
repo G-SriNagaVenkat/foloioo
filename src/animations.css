@@ -1,0 +1,79 @@
+/* Scroll Animation Utilities */
+
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-animation.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animations for children elements */
+.stagger-animation > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-animation.animate > *:nth-child(1) { transition-delay: 0.1s; }
+.stagger-animation.animate > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger-animation.animate > *:nth-child(3) { transition-delay: 0.3s; }
+.stagger-animation.animate > *:nth-child(4) { transition-delay: 0.4s; }
+.stagger-animation.animate > *:nth-child(5) { transition-delay: 0.5s; }
+.stagger-animation.animate > *:nth-child(6) { transition-delay: 0.6s; }
+.stagger-animation.animate > *:nth-child(7) { transition-delay: 0.7s; }
+.stagger-animation.animate > *:nth-child(8) { transition-delay: 0.8s; }
+
+.stagger-animation.animate > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade animations */
+.fade-animation {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.fade-animation.animate {
+  opacity: 1;
+}
+
+/* Slide animations from different directions */
+.slide-right {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-right.animate,
+.slide-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Zoom animations */
+.zoom-animation {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.zoom-animation.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Parallax bg styling */
+.parallax-bg {
+  transition: transform 0.2s ease-out;
+}

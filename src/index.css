@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('./animated-backgrounds.css');
+
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary: #60a5fa;
+  --text: #f8fafc;
+  --background: #0f172a;
+  --background-light: #1e293b;
+  --background-lighter: #334155;
+  --error: #ef4444;
+  --success: #10b981;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease-out;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+main {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  padding: 100px 0;
+  position: relative;
+  min-height: 100vh; /* Ensure each section takes up at least one viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start; /* Snap sections to viewport */
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  color: var(--text);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Position the animated elements for each section */
+section .animated-gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+
+section .cube {
+  position: absolute;
+  z-index: -1;
+}
+
+section .cube:nth-child(1) {
+  top: 80vh;
+  left: 45vw;
+  animation-delay: 0s;
+}
+
+section .cube:nth-child(2) {
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+
+section .cube:nth-child(3) {
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+
+section .cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+
+section .cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+
+section .cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+/* Section Background */
+.section-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background-lighter);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  section {
+    padding: 80px 0;
+    scroll-snap-align: none; /* Disable snap on mobile */
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
