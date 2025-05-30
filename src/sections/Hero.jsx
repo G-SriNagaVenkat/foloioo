@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="container hero-container">
         <div ref={contentRef} className="hero-content scroll-animation">
           <h1 className="hero-title">
-            Hi, I'm <span className="highlight">G SRI naga venkat</span>
+            Hi, I'm <span className="highlight">G SRI Naga Venkat</span>
           </h1>
           <h2 className="hero-subtitle">
             Front-end Developer & UI/UX Designer
